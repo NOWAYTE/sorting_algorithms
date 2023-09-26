@@ -46,7 +46,7 @@ void insertion_sort_list(listint_t **list)
 	c = (*list)->next;
 
 
-	while (current != NULL)
+	while (c != NULL)
 	{
 		listint_t *temp = c;
 
