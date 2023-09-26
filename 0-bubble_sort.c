@@ -1,4 +1,5 @@
 #include<stdio.h>
+#include "sort.h"
 /**
  * s_int - Swap integers in an array
  * @a: first integer
@@ -6,7 +7,7 @@
  *
  */
 
-void s_int(int *a, int b)
+void s_int(int *a, int *b)
 {
 	int t;
 
@@ -21,7 +22,7 @@ void s_int(int *a, int b)
  * @array: array of integers
  * @size: Size of array
  */
-void bubble_srt(int *array, size_t size)
+void bubble_sort(int *array, size_t size)
 {
 	size_t i;
 	size_t l = size;
@@ -33,7 +34,7 @@ void bubble_srt(int *array, size_t size)
 
 	}
 
-	whiel (!b)
+	while (!b)
 	{
 		b = true;
 
@@ -53,3 +54,4 @@ void bubble_srt(int *array, size_t size)
 		l--;
 
 	}
+}
