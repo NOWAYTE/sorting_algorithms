@@ -18,7 +18,7 @@ void s_int(int *a, int *b)
 }
 
 /**
- * bubble_sort -sort array of integers 
+ * bubble_sort -sort array of integers
  * @array: array of integers
  * @size: Size of array
  */
