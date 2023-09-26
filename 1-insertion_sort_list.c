@@ -36,22 +36,24 @@ void s_node(listint_t **n, listint_t **n1, listint_t *n2)
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current;
+	listint_t *c;
 
 	if (list == NULL || *list == NULL || (*list)->next == NULL)
 	{
 		return;
 	}
- 
-	current = (*list)->next;
+
+	c = (*list)->next;
+
 
 	while (current != NULL)
 	{
-		listint_t *temp = current;
+		listint_t *temp = c;
 
 		while (temp->prev != NULL && temp->n < temp->prev->n)
 		{
 			listint_t *prev = temp->prev;
+
 			listint_t *next = temp->next;
 
 			if (prev->prev != NULL)
@@ -76,6 +78,6 @@ void insertion_sort_list(listint_t **list)
 			print_list((const listint_t *)*list);
 		}
 
-		current = current->next;
+		c = c->next;
 	}
 }
