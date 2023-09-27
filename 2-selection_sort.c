@@ -22,23 +22,26 @@ void s_int(int *a, int *b)
  */
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, min_idx;
+	size_t x, y, m;
 
 	if (array == NULL || size < 2)
-		return;
-
-	for (i = 0; i < size - 1; i++)
 	{
-		min_idx = i;
-		for (j = i + 1; j < size; j++)
+
+		return;
+	}
+
+	for (x = 0; x < size - 1; x++)
+	{
+		m = x;
+		for (y = x + 1; y < size; y++)
 		{
-			if (array[j] < array[min_idx])
-				min_idx = j;
+			if (array[y] < array[m])
+				m = y;
 		}
 
-		if (min_idx != i)
+		if (m != y)
 		{
-			s_int(&array[i], &array[min_idx]);
+			s_int(&array[x], &array[m]);
 			print_array(array, size);
 		}
 	}
