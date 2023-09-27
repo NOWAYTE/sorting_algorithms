@@ -26,7 +26,9 @@ void selection_sort(int *array, size_t size)
 
 
 	if (array == NULL || size < 2)
+	{
 		return;
+	}
 
 	for (x = 0; x < size - 1; x++)
 	{
@@ -34,12 +36,17 @@ void selection_sort(int *array, size_t size)
 		for (j = x + 1; j < size; j++)
 		{
 			if (array[j] < array[m])
+			{
 				m = j;
+
+			}
+
 		}
 
 		if (m != x)
 		{
 			s_int(&array[x], &array[m]);
+
 			print_array(array, size);
 		}
 	}
