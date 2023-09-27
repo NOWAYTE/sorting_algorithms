@@ -37,11 +37,14 @@ void selection_sort(int *array, size_t size)
 		{
 			if (array[y] < array[m])
 				m = y;
+
 		}
 
 		if (m != y)
 		{
+
 			s_int(&array[x], &array[m]);
+
 			print_array(array, size);
 		}
 	}
