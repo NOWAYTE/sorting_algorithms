@@ -22,24 +22,24 @@ void s_int(int *a, int *b)
  */
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, m;
+	size_t x, j, m;
 
 
 	if (array == NULL || size < 2)
 		return;
 
-	for (i = 0; i < size - 1; i++)
+	for (x = 0; x < size - 1; x++)
 	{
-		m = i;
-		for (j = i + 1; j < size; j++)
+		m = x;
+		for (j = x + 1; j < size; j++)
 		{
 			if (array[j] < array[m])
 				m = j;
 		}
 
-		if (m != i)
+		if (m != x)
 		{
-			s_int(&array[i], &array[m]);
+			s_int(&array[x], &array[m]);
 			print_array(array, size);
 		}
 	}
