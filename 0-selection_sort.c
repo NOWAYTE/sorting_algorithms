@@ -1,45 +1,53 @@
 #include "sort.h"
-#include <stdio.h>
-
 /**
  * s_int - swap integers
- * @a: first int
+ * @a: first int 
  * @b: second int
  */
 void s_int(int *a, int *b)
 {
 	int t;
-
+	
 	t = *a;
 	*a = *b;
 	*b = t;
+
 }
 
 /**
  * selection_sort - Sort array of integers
- * @array: array of integers
+ * @array: array of integers 
  * @size: size of array
+ *
  */
 void selection_sort(int *array, size_t size)
 {
-	size_t i, j, min_idx;
+	int *m;
+	size_t x, y;
 
 	if (array == NULL || size < 2)
+	{
 		return;
 
-	for (i = 0; i < size - 1; i++)
+	}
+
+	for (x =0; x < size; x++)
 	{
-		min_idx = i;
-		for (j = i + 1; j < size; j++)
+		m = array + x;
+
+		for (y = x + 1; y <size; y++)
 		{
-			if (array[j] < array[min_idx])
-				min_idx = j;
+			m = (array[y] < *m) ? (array + y) : m;
+
+			if ((array + x) != m)
+			{
+				s_int(array + x, m);
+				print_array(array, size);
+
+			}
+
 		}
 
-		if (min_idx != i)
-		{
-			s_int(&array[i], &array[min_idx]);
-			print_array(array, size);
-		}
 	}
+
 }
